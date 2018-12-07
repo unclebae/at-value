@@ -34,14 +34,14 @@ public class DemoAtValueApplication implements CommandLineRunner {
     @Value("#{'${admin.users.email}'.split(',')}")
     private List<String> adminUsersList;
 
-    @Value("#{systemProperties['host.name']}")
-    private String hostNameSystemSepl;
+    @Value("#{systemProperties['user.name']}")
+    private String userNameSystemSepl;
 
     @Value("${who.am.i}")
     private String whoami;
 
-    @Value("${host.name}")
-    private String hostNameWhat;
+    @Value("${user.name}")
+    private String userNameWhat;
 
     @Value("${test.unknown:defaultValue}")
     private String defaultValue;
@@ -85,13 +85,13 @@ public class DemoAtValueApplication implements CommandLineRunner {
         System.out.println(">>> adminUsersList End: ");
 
         System.out.println("6. [SPEL system properties] -------------------------------------------------");
-        System.out.println(">>> hostNameSystemSepl: " + hostNameSystemSepl);
+        System.out.println(">>> userNameSystemSepl: " + userNameSystemSepl);
 
         System.out.println("7. [Using SPEL in properties file] -------------------------------------------------");
         System.out.println(">>> whoami: " + whoami);
 
         System.out.println("8. [systemProperties first] -------------------------------------------------");
-        System.out.println(">>> hostNameWhat: " + hostNameWhat);
+        System.out.println(">>> userNameWhat: " + userNameWhat);
 
         System.out.println("9. [default if absent property] -------------------------------------------------");
         System.out.println(">>> defaultValue: " + defaultValue);
